@@ -11,6 +11,7 @@ import React from "react";
 import { cn } from "../lib/utils";
 import toast from "react-hot-toast";
 
+
 const ContactSection = () => {
 
   const handleSubmit = async (e) => {
@@ -18,9 +19,11 @@ const ContactSection = () => {
 
   const form = e.target;
   const formData = new FormData(form);
+  
+     
 
   try {
-    const response = await fetch("https://formspree.io/f/xkgbgvaw", {
+    const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",
