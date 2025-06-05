@@ -13,12 +13,33 @@ import toast from "react-hot-toast";
 
 const ContactSection = () => {
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.error(
-      "Message service is down. Please click the email link to contact me."
-    );
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xkgbgvaw", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+    });
+
+    if (response.ok) {
+      toast.success("Your message has been sent. I’ll get back to you soon.");
+      form.reset();
+    } else {
+      toast.error("Oops! Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    toast.error("Network error. Please try again.");
+  }
+};
+
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -95,7 +116,9 @@ const ContactSection = () => {
           </div>
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-            <form className="space-y-6">
+            <form 
+            onSubmit={handleSubmit}
+            className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -147,7 +170,6 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                onClick={handleSubmit}
                 className={cn(
                   "cosmic-button w-full flex items-center justify-center gap-2"
                 )}
