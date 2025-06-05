@@ -10,13 +10,18 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Intentional delay of 3 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    },5000);
+  const timer = setTimeout(() => {
+    setLoading(false);
+ 
+    const staticLoader = document.getElementById("static-loader");
+    if (staticLoader) {
+      staticLoader.style.display = "none";
+    }
+  }, 3000);
 
-    return () => clearTimeout(timer); // Cleanup
-  }, []);
+  return () => clearTimeout(timer);
+}, []);
+
 
   if (loading) {
     return (
