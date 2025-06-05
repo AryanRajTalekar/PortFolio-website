@@ -7,6 +7,7 @@ import AboutSection from '../components/AboutSection'
 import SkillsSection from '../components/SkillsSection'
 import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
+import FooterSection from '../components/FooterSection'
 const Home = () => {
   return (
     <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
@@ -32,7 +33,7 @@ const Home = () => {
     </main>
 
       {/* Footer */}
-
+  <FooterSection/>
 
     </div>
   )
