@@ -4,7 +4,7 @@ This is my personal portfolio website, built to showcase my skills, projects, an
 
 ## 🌐 Live Site
 
-🔗 [Visit Portfolio](https://port-folio-website-indol.vercel.app/)
+🔗 [Visit Portfolio](https://aryanrajtalekar-portfolio.vercel.app/)
 
 ## 📁 Features
 
