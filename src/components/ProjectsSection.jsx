@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     title: "ThinkStack - LMS Web Application",
     description:
-      "A learning management system currently under construction, designed to organize course content and track user progress effectively.",
+      "A learning management system under construction to organize course content and track progress efficiently.",
     image: "/projects/lms.png",
     tags: ["React", "Express", "Redux RTK Query"],
     demoUrl: "https://github.com/AryanRajTalekar/ThinkStack",
@@ -16,28 +16,27 @@ const projects = [
     id: 2,
     title: "Library Management System",
     description:
-      "A GUI-based Python application for managing library operations like book lending, returns, and member records using Tkinter.",
+      "Python desktop app for managing library operations like lending, returns, and member records using Tkinter.",
     image: "/projects/library_management_app (2).png",
     tags: ["Python", "Tkinter"],
-    demoUrl: "-",
+    demoUrl: "",
     gitHubUrl: "https://github.com/AryanRajTalekar/library_management_system",
   },
   {
     id: 3,
     title: "Bank Management System",
     description:
-      "A desktop banking application built using Java Swing, supporting account creation, transaction history, and customer data management.",
+      "Java Swing-based app supporting account creation, transaction logs, and customer data handling.",
     image: "/projects/bank_management.png",
     tags: ["Java", "Swing", "OOP"],
-    demoUrl: "-",
+    demoUrl: "",
     gitHubUrl: "https://github.com/AryanRajTalekar/Bank-Management-Project",
   },
-
   {
     id: 4,
     title: "Password Generator",
     description:
-      "A password generator app focusing on React Hooks like `useState`, `useRef`, and `useEffect`.",
+      "A secure password generator using React Hooks like `useState`, `useRef`, and `useEffect`.",
     image: "/projects/password-generator.png",
     tags: ["React", "Hooks", "JavaScript"],
     demoUrl: "https://password-generator-597m.vercel.app/",
@@ -47,7 +46,7 @@ const projects = [
     id: 5,
     title: "Redux Counter Project",
     description:
-      "A basic counter app built with Redux Toolkit to demonstrate state management patterns in a clean and scalable way.",
+      "Minimal counter app using Redux Toolkit to illustrate clean state management.",
     image: "/projects/redux-counter (1).png",
     tags: ["React", "Redux Toolkit"],
     demoUrl: "https://counter-in-react-using-redux-toolki-iota.vercel.app/",
@@ -57,10 +56,11 @@ const projects = [
   {
     id: 6,
     title: "Uber Clone",
-    description: "A full-stack ride-booking platform inspired by Uber.",
+    description:
+      "A full-stack ride booking system built with the MERN stack, inspired by Uber.",
     image: "/projects/cropped-Uber_Clone.jpeg",
     tags: ["MongoDB", "Express", "React", "Node.js"],
-    demoUrl: "-",
+    demoUrl: "",
     gitHubUrl: "https://github.com/AryanRajTalekar/uber_clone_resume_project",
   },
 ];
@@ -74,55 +74,61 @@ const ProjectsSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          A showcase of my recent projects that reflect my learning journey and
-          practical experience. Some are still in progress, but each highlights
-          my focus on clean UI, full-stack functionality, and a drive to explore
-          new technologies.
+          A showcase of my recent projects—some still evolving—that reflect my hands-on experience, UI/UX skills, and a passion for full-stack development.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
+          {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="h-48 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="rounded-full px-2 py-1 border text-xs font-medium bg-secondary text-secondary-foreground">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="rounded-full px-2 py-1 border text-xs font-medium bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 text-sm ">
+                <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
+
+                <div className="flex space-x-4">
+                  {project.demoUrl && project.demoUrl !== "-" && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
+                      rel="noopener noreferrer"
+                      title="Live Demo"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
                       <ExternalLink size={20} />
                     </a>
-                    <a
-                      href={project.gitHubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                  )}
+                  <a
+                    href={project.gitHubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View Source"
+                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  >
+                    <Github size={20} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -133,11 +139,10 @@ const ProjectsSection = () => {
           <a
             href="https://github.com/AryanRajTalekar"
             target="_blank"
+            rel="noopener noreferrer"
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
-
           >
-            Check My GitHUb
-            <ArrowRight size={16} />
+            Check My GitHub <ArrowRight size={16} />
           </a>
         </div>
       </div>

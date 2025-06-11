@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const FooterSection = () => {
   return (
-   <section id="footer">
-    <div>
-        <h1 className='text-white p-4 text-glow font-semibold'>Made with ❤️ by <span className='text-primary font-bold text-2xl'>Aryan</span></h1>
-    </div>
-   </section>
-  )
-}
+    <footer id="footer" className="bg-background border-t border-muted py-6 mt-12">
+      <div className="container mx-auto px-4 text-center">
+        <p className="text-white text-sm sm:text-base">
+          Made with ❤️ by{" "}
+          <span className="text-primary font-bold text-lg sm:text-2xl">
+            Aryan
+          </span>
+        </p>
+      </div>
+    </footer>
+  );
+};
 
-export default FooterSection
+export default FooterSection;

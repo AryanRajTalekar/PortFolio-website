@@ -1,42 +1,39 @@
-import React from 'react'
-import { ThemeToggle } from '../components/ThemeToggle'
-import StarBackground  from '../components/StarBackground'
-import Navbar from '../components/Navbar'
-import HeroSection from '../components/HeroSection'
-import AboutSection from '../components/AboutSection'
-import SkillsSection from '../components/SkillsSection'
-import ProjectsSection from '../components/ProjectsSection'
-import ContactSection from '../components/ContactSection'
-import FooterSection from '../components/FooterSection'
+import React from 'react';
+import { ThemeToggle } from '../components/ThemeToggle';
+import StarBackground from '../components/StarBackground';
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import SkillsSection from '../components/SkillsSection';
+import ProjectsSection from '../components/ProjectsSection';
+import ContactSection from '../components/ContactSection';
+import FooterSection from '../components/FooterSection';
+
 const Home = () => {
   return (
-    <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Theme Toggle */}
-      <ThemeToggle/>
-
+      <ThemeToggle />
 
       {/* Background Effects */}
-
-      <StarBackground/>
+      <StarBackground />
 
       {/* Navbar */}
+      <Navbar />
 
-          <Navbar/>
       {/* Main Content */}
-
-    <main>
-      <HeroSection />
-      <AboutSection/>
-      <SkillsSection/>
-      <ProjectsSection/>
-      <ContactSection/>
-    </main>
+      <main className="w-full">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
 
       {/* Footer */}
-  <FooterSection/>
-
+      <FooterSection />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
