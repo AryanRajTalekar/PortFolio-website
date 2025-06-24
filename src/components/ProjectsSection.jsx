@@ -53,16 +53,6 @@ const projects = [
     gitHubUrl:
       "https://github.com/AryanRajTalekar/Counter_In_react_Using_redux_toolkit",
   },
-  {
-    id: 6,
-    title: "Uber Clone",
-    description:
-      "A full-stack ride booking system built with the MERN stack, inspired by Uber.",
-    image: "/projects/cropped-Uber_Clone.jpeg",
-    tags: ["MongoDB", "Express", "React", "Node.js"],
-    demoUrl: "",
-    gitHubUrl: "https://github.com/AryanRajTalekar/uber_clone_resume_project",
-  },
 ];
 
 const ProjectsSection = () => {
