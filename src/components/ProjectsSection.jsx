@@ -9,8 +9,8 @@ const projects = [
       "A learning management system under construction to organize course content and track progress efficiently.",
     image: "/projects/lms.png",
     tags: ["React", "Express", "Redux RTK Query"],
-    demoUrl: "https://github.com/AryanRajTalekar/ThinkStack",
-    gitHubUrl: "https://github.com/AryanRajTalekar/ThinkStack",
+    demoUrl: "https://lms-thinkstack-1.onrender.com/",
+    gitHubUrl: "https://github.com/AryanRajTalekar/LMS-ThinkStack",
   },
   {
     id: 2,
