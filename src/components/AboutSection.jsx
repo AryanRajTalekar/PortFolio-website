@@ -32,7 +32,7 @@ const AboutSection = () => {
               </a>
 
               <a
-                href="/Aryan_talekar_resume.pdf"
+                href="/Aryan_Talekar_Resume.pdf"
                 download
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
